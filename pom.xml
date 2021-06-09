@@ -8,12 +8,31 @@
 	<name>Jasper-Report</name>
 	<description>Jasper-Report</description>
 
+    <properties>
+        <java.version>1.8</java.version>
+        <font_location>${basedir}/src/main/resources/fonts/fonts-extension.jar</font_location>
+    </properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>net.sf.jasperreports</groupId>
 			<artifactId>jasperreports</artifactId>
 			<version>6.17.0</version>
 		</dependency>
+
+        <dependency>
+            <groupId>net.sf.jasperreports</groupId>
+            <artifactId>jasperreports-fonts</artifactId>
+            <version>6.17.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>local.jasperFontOverrides</groupId>
+            <artifactId>local.jasperFontOverrides</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${font_location}</systemPath>
+        </dependency>
 
 		<!-- https://mvnrepository.com/artifact/com.lowagie/itext -->
 		<dependency>
