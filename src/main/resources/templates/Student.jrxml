@@ -52,8 +52,6 @@
 	</queryString>
 	<field name="tableData" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
 	<field name="chartDataSource" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
-	<field name="subjectName" class="java.lang.String"/>
-	<field name="marksObtained" class="java.lang.Long"/>
 	<title>
 		<band height="80" splitType="Stretch">
 			<frame>
@@ -207,7 +205,7 @@
 				</reportElement>
 				<pieChart>
 					<chart evaluationTime="Report">
-						<reportElement x="0" y="0" width="200" height="200" uuid="4442c0ef-49d3-4225-9706-14c5e377fe7f"/>
+						<reportElement x="0" y="0" width="200" height="200" uuid="f4640e5a-5c88-428f-a621-2b01ffb8763c"/>
 						<box>
 							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -220,7 +218,7 @@
 					</chart>
 					<pieDataset>
 						<dataset resetType="Report">
-							<datasetRun subDataset="tableDataset" uuid="9fabfc0f-1504-44a3-adb8-88f36a2b7379">
+							<datasetRun subDataset="tableDataset" uuid="31f31168-4972-41f1-8ca7-b34f8b77b922">
 								<dataSourceExpression><![CDATA[$F{chartDataSource}]]></dataSourceExpression>
 							</datasetRun>
 						</dataset>
