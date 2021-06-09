@@ -40,6 +40,7 @@
 		<property name="com.jaspersoft.studio.field.label" value="CITY"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="ADDRESS"/>
 	</field>
+	<sortField name="firstName"/>
 	<background>
 		<band/>
 	</background>

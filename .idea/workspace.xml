@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="145ebf4f-673f-4baa-bb08-e4cd9cfb44d3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/infybuzz/report/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fonts/fonts-extension.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/infybuzz/report/Subject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/Student.jrxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/infybuzz/report/FirstReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/infybuzz/report/FirstReport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/FirstReport.jrxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/FirstReport.jrxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/FirstReport.jrxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/FirstReport.jrxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,34 +25,34 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="6" />
+          <entry key="class" value="10" />
           <entry key="gitignore" value="1" />
           <entry key="iml" value="1" />
-          <entry key="java" value="8" />
-          <entry key="jrxml" value="3" />
+          <entry key="java" value="9" />
+          <entry key="jrxml" value="4" />
           <entry key="xml" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="6" />
+          <entry key="CLASS" value="10" />
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="8" />
+          <entry key="JAVA" value="9" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="XML" value="6" />
+          <entry key="XML" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="2524" />
-          <entry key="txt" value="8" />
+          <entry key="java" value="3221" />
+          <entry key="txt" value="30" />
           <entry key="xml" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2524" />
-          <entry key="PLAIN_TEXT" value="8" />
+          <entry key="JAVA" value="3221" />
+          <entry key="PLAIN_TEXT" value="30" />
           <entry key="XML" value="14" />
         </counts>
       </usages-collector>
@@ -80,15 +79,69 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/infybuzz/report/FirstReport.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
+            <state relative-caret-position="1330">
+              <caret line="109" column="49" selection-start-line="109" selection-start-column="49" selection-end-line="109" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#759#775#0" expanded="true" />
-                <element signature="e#1344#1353#0" expanded="true" />
-                <element signature="e#2946#2947#0" expanded="true" />
-                <element signature="e#3002#3003#0" expanded="true" />
+                <element signature="method#generateFirstReport#0;class#FirstReport#0" />
+                <element signature="e#2739#2755#0" expanded="true" />
+                <element signature="e#3612#3621#0" expanded="true" />
+                <element signature="e#4858#4874#0" expanded="true" />
+                <element signature="e#5068#5077#0" expanded="true" />
+                <element signature="e#5523#5539#0" expanded="true" />
+                <element signature="e#5663#5679#0" expanded="true" />
+                <element signature="e#6231#6232#0" expanded="true" />
+                <element signature="e#6287#6288#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/infybuzz/report/Subject.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="140">
+              <caret line="5" column="30" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/net/sf/jasperreports/jasperreports/6.17.0/jasperreports-6.17.0.jar!/net/sf/jasperreports/engine/data/JRBeanCollectionDataSource.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="12" column="59" lean-forward="true" selection-start-line="12" selection-start-column="59" selection-end-line="12" selection-end-column="59" />
+              <folding>
+                <element signature="e#540#541#0" expanded="true" />
+                <element signature="e#582#583#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/net/sf/jasperreports/jasperreports/6.17.0/jasperreports-6.17.0.jar!/net/sf/jasperreports/engine/data/JRAbstractBeanDataSource.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="16" column="80" selection-start-line="16" selection-start-column="58" selection-end-line="16" selection-end-column="80" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/net/sf/jasperreports/jasperreports/6.17.0/jasperreports-6.17.0.jar!/net/sf/jasperreports/engine/JasperCompileManager.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="206">
+              <caret line="162" column="31" selection-start-line="162" selection-start-column="31" selection-end-line="162" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/Student.jrxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1456">
+              <caret line="52" column="11" lean-forward="true" selection-start-line="52" selection-start-column="11" selection-end-line="52" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -109,8 +162,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="jar://$MAVEN_REPOSITORY$/net/sf/jasperreports/jasperreports/6.17.0/jasperreports-6.17.0.jar!/net/sf/jasperreports/engine/data/JRMapCollectionDataSource.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="18" column="61" lean-forward="true" selection-start-line="18" selection-start-column="61" selection-end-line="18" selection-end-column="61" />
+            <state relative-caret-position="206">
+              <caret line="18" column="61" selection-start-line="18" selection-start-column="61" selection-end-line="18" selection-end-column="61" />
             </state>
           </provider>
         </entry>
@@ -268,7 +321,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1623211223665" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1623225746115" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/templates" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -279,8 +332,9 @@
       <recent name="D:\DOCUMENTACION &amp; TUTORIALES\Curso Udemy_Build Reports with JasperReports Java and Spring Boot\course_projects\java_project_jasper\src\main\resources\templates" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\DOCUMENTACION &amp; TUTORIALES\Curso Udemy_Build Reports with JasperReports Java and Spring Boot\course_projects\java_project_jasper\src\main\resources\fonts" />
       <recent name="D:\DOCUMENTACION &amp; TUTORIALES\Curso Udemy_Build Reports with JasperReports Java and Spring Boot\course_projects\java_project_jasper\src\main\java\com\infybuzz\report" />
+      <recent name="D:\DOCUMENTACION &amp; TUTORIALES\Curso Udemy_Build Reports with JasperReports Java and Spring Boot\course_projects\java_project_jasper\src\main\resources\templates" />
+      <recent name="D:\DOCUMENTACION &amp; TUTORIALES\Curso Udemy_Build Reports with JasperReports Java and Spring Boot\course_projects\java_project_jasper\src\main\resources\fonts" />
       <recent name="D:\DOCUMENTACION &amp; TUTORIALES\Curso Udemy_Build Reports with JasperReports Java and Spring Boot\course_projects\java_project_jasper\src\main\resources" />
     </key>
   </component>
@@ -383,11 +437,18 @@
       <option name="project" value="LOCAL" />
       <updated>1623194616377</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Created the FirtReport">
+      <created>1623211338277</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1623211338277</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19529000" />
+    <option name="totallyTimeSpent" value="29910000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -410,7 +471,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4993515" weight="0.70926964" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4993515" weight="0.9957865" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3988764" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -439,14 +500,15 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Config" />
-    <option name="LAST_COMMIT_MESSAGE" value="Config" />
+    <MESSAGE value="Created the FirtReport" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created the FirtReport" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/infybuzz/report/FirstReport.java</url>
-          <line>82</line>
+          <line>53</line>
           <properties />
           <option name="timeStamp" value="6" />
         </line-breakpoint>
@@ -568,24 +630,6 @@ jasperPrint.getPages().get(0).getElements().get(0).getElements().get(3).setText(
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/net/sf/jasperreports/jasperreports/6.17.0/jasperreports-6.17.0.jar!/net/sf/jasperreports/engine/data/JRBeanCollectionDataSource.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
-          <folding>
-            <element signature="e#540#541#0" expanded="true" />
-            <element signature="e#582#583#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/net/sf/jasperreports/jasperreports/6.17.0/jasperreports-6.17.0.jar!/net/sf/jasperreports/engine/JasperCompileManager.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="162" column="31" selection-start-line="162" selection-start-column="31" selection-end-line="162" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/net/sf/jasperreports/jasperreports/6.17.0/jasperreports-6.17.0.jar!/net/sf/jasperreports/engine/JasperFillManager.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="206">
@@ -607,13 +651,6 @@ jasperPrint.getPages().get(0).getElements().get(0).getElements().get(3).setText(
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/net/sf/jasperreports/jasperreports/6.17.0/jasperreports-6.17.0.jar!/net/sf/jasperreports/engine/data/JRMapCollectionDataSource.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="18" column="61" lean-forward="true" selection-start-line="18" selection-start-column="61" selection-end-line="18" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/net/sf/jasperreports/jasperreports/6.17.0/jasperreports-6.17.0.jar!/net/sf/jasperreports/engine/data/JRMapArrayDataSource.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
@@ -625,16 +662,74 @@ jasperPrint.getPages().get(0).getElements().get(0).getElements().get(3).setText(
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/Student.jrxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1456">
+          <caret line="52" column="11" lean-forward="true" selection-start-line="52" selection-start-column="11" selection-end-line="52" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/net/sf/jasperreports/jasperreports/6.17.0/jasperreports-6.17.0.jar!/net/sf/jasperreports/engine/JasperCompileManager.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="162" column="31" selection-start-line="162" selection-start-column="31" selection-end-line="162" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/net/sf/jasperreports/jasperreports/6.17.0/jasperreports-6.17.0.jar!/net/sf/jasperreports/engine/JREmptyDataSource.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/net/sf/jasperreports/jasperreports/6.17.0/jasperreports-6.17.0.jar!/net/sf/jasperreports/engine/data/JRBeanCollectionDataSource.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="12" column="59" lean-forward="true" selection-start-line="12" selection-start-column="59" selection-end-line="12" selection-end-column="59" />
+          <folding>
+            <element signature="e#540#541#0" expanded="true" />
+            <element signature="e#582#583#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/net/sf/jasperreports/jasperreports/6.17.0/jasperreports-6.17.0.jar!/net/sf/jasperreports/engine/data/JRAbstractBeanDataSource.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="16" column="80" selection-start-line="16" selection-start-column="58" selection-end-line="16" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/net/sf/jasperreports/jasperreports/6.17.0/jasperreports-6.17.0.jar!/net/sf/jasperreports/engine/data/JRMapCollectionDataSource.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="18" column="61" selection-start-line="18" selection-start-column="61" selection-end-line="18" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/infybuzz/report/Subject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="5" column="30" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/infybuzz/report/FirstReport.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
+        <state relative-caret-position="1330">
+          <caret line="109" column="49" selection-start-line="109" selection-start-column="49" selection-end-line="109" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#759#775#0" expanded="true" />
-            <element signature="e#1344#1353#0" expanded="true" />
-            <element signature="e#2946#2947#0" expanded="true" />
-            <element signature="e#3002#3003#0" expanded="true" />
+            <element signature="method#generateFirstReport#0;class#FirstReport#0" />
+            <element signature="e#2739#2755#0" expanded="true" />
+            <element signature="e#3612#3621#0" expanded="true" />
+            <element signature="e#4858#4874#0" expanded="true" />
+            <element signature="e#5068#5077#0" expanded="true" />
+            <element signature="e#5523#5539#0" expanded="true" />
+            <element signature="e#5663#5679#0" expanded="true" />
+            <element signature="e#6231#6232#0" expanded="true" />
+            <element signature="e#6287#6288#0" expanded="true" />
           </folding>
         </state>
       </provider>
