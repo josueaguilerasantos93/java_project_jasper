@@ -34,6 +34,14 @@
             <systemPath>${font_location}</systemPath>
         </dependency>
 
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>4.1.1</version>
+			<scope>compile</scope>
+			<optional>true</optional>
+		</dependency>
+
 		<!-- https://mvnrepository.com/artifact/com.lowagie/itext -->
 		<dependency>
 			<groupId>com.lowagie</groupId>
