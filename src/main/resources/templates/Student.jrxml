@@ -44,6 +44,13 @@
 			<variableExpression><![CDATA[$F{marksObtained}]]></variableExpression>
 		</variable>
 	</subDataset>
+	<subDataset name="chartDataset" uuid="8f73835d-2935-411b-a54e-16787a4bee53">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="subjectName" class="java.lang.String"/>
+		<field name="marksObtained" class="java.lang.Long"/>
+	</subDataset>
 	<parameter name="studentName" class="java.lang.String">
 		<defaultValueExpression><![CDATA["Josue"]]></defaultValueExpression>
 	</parameter>
@@ -52,6 +59,7 @@
 	</queryString>
 	<field name="tableData" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
 	<field name="chartDataSource" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<field name="barChartDataSource" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
 	<title>
 		<band height="80" splitType="Stretch">
 			<frame>
@@ -94,7 +102,7 @@
 	<detail>
 		<band height="94" splitType="Stretch">
 			<componentElement>
-				<reportElement x="0" y="0" width="555" height="90" uuid="04e3de37-de20-4884-b136-ed6663991e4e">
+				<reportElement x="0" y="0" width="280" height="90" uuid="04e3de37-de20-4884-b136-ed6663991e4e">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 					<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
 					<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
@@ -203,22 +211,16 @@
 				<reportElement x="0" y="7" width="555" height="200" uuid="3b42e8f6-5a8a-4fb0-b519-cc56d5d44fbf">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
-				<pieChart>
+				<pie3DChart>
 					<chart evaluationTime="Report">
-						<reportElement x="0" y="0" width="200" height="200" uuid="f4640e5a-5c88-428f-a621-2b01ffb8763c"/>
-						<box>
-							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-						</box>
+						<reportElement x="0" y="0" width="170" height="140" uuid="fa2342b2-de9f-41e6-8651-1c4d83cd94ad"/>
 						<chartTitle/>
 						<chartSubtitle/>
 						<chartLegend/>
 					</chart>
 					<pieDataset>
 						<dataset resetType="Report">
-							<datasetRun subDataset="tableDataset" uuid="31f31168-4972-41f1-8ca7-b34f8b77b922">
+							<datasetRun subDataset="chartDataset" uuid="0612fb8f-a17b-4fca-bb77-8e05dab83e29">
 								<dataSourceExpression><![CDATA[$F{chartDataSource}]]></dataSourceExpression>
 							</datasetRun>
 						</dataset>
@@ -226,11 +228,42 @@
 						<valueExpression><![CDATA[$F{marksObtained}]]></valueExpression>
 						<labelExpression><![CDATA["" + $F{marksObtained}]]></labelExpression>
 					</pieDataset>
-					<piePlot>
+					<pie3DPlot>
 						<plot/>
 						<itemLabel/>
-					</piePlot>
-				</pieChart>
+					</pie3DPlot>
+				</pie3DChart>
+				<bar3DChart>
+					<chart evaluationTime="Report">
+						<reportElement x="235" y="0" width="320" height="200" uuid="ec043f6c-1e91-47ec-9a4b-917e829a94fa"/>
+						<chartTitle/>
+						<chartSubtitle/>
+						<chartLegend/>
+					</chart>
+					<categoryDataset>
+						<dataset resetType="Report">
+							<datasetRun subDataset="tableDataset" uuid="2da98876-f39e-481b-9c79-0c5b4928bd18">
+								<dataSourceExpression><![CDATA[$F{barChartDataSource}]]></dataSourceExpression>
+							</datasetRun>
+						</dataset>
+						<categorySeries>
+							<seriesExpression><![CDATA[$F{subjectName}]]></seriesExpression>
+							<categoryExpression><![CDATA[$F{subjectName} + "=" +$F{marksObtained}]]></categoryExpression>
+							<valueExpression><![CDATA[$F{marksObtained}]]></valueExpression>
+							<labelExpression><![CDATA[$F{subjectName}]]></labelExpression>
+						</categorySeries>
+					</categoryDataset>
+					<bar3DPlot>
+						<plot/>
+						<itemLabel/>
+						<categoryAxisFormat>
+							<axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
+						</categoryAxisFormat>
+						<valueAxisFormat>
+							<axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
+						</valueAxisFormat>
+					</bar3DPlot>
+				</bar3DChart>
 			</frame>
 			<frame>
 				<reportElement mode="Opaque" x="0" y="215" width="555" height="15" backcolor="#9196B8" uuid="4e3785c9-dc2c-4fc5-9dee-161582b08a7d">

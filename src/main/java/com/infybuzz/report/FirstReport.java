@@ -7,10 +7,20 @@ import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import net.sf.jasperreports.engine.data.JRMapArrayDataSource;
 import net.sf.jasperreports.engine.data.JRMapCollectionDataSource;
 import net.sf.jasperreports.engine.data.JsonDataSource;
+import net.sf.jasperreports.engine.export.JRCsvExporter;
+import net.sf.jasperreports.engine.export.JRRtfExporter;
+import net.sf.jasperreports.engine.export.JRXlsExporter;
+import net.sf.jasperreports.engine.export.ooxml.JRPptxExporter;
+import net.sf.jasperreports.engine.export.ooxml.JRXlsxExporter;
 import net.sf.jasperreports.engine.fill.JRTemplatePrintFrame;
 import net.sf.jasperreports.engine.fill.JRTemplatePrintText;
+import net.sf.jasperreports.export.SimpleExporterInput;
+import net.sf.jasperreports.export.SimpleOutputStreamExporterOutput;
+import net.sf.jasperreports.export.SimpleWriterExporterOutput;
 
 import java.awt.*;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.List;
@@ -34,6 +44,13 @@ public class FirstReport {
 
     public static final String pdfExtension = "pdf";
     public static final String jrxmlExtension = "jrxml";
+    public static final String htmlExtension = "html";
+    public static final String xlsxExtension = "xlsx";
+    public static final String xlsExtension = "xls";
+    public static final String csvExtension = "csv";
+    public static final String rtfExtension = "rtf";
+    public static final String pptxExtension = "pptx";
+
     public static final String firstReportName = "FirstReport";
     public static final String studentReportName = "Student";
 
@@ -110,11 +127,27 @@ public class FirstReport {
             JRBeanCollectionDataSource tableDataSource = new JRBeanCollectionDataSource(subjectList);
 
             // chartDataSource
-            JRBeanCollectionDataSource chartDataSource = new JRBeanCollectionDataSource(subjectList);
+            List<Subject> chartSubjectList = new ArrayList<Subject>();
+            chartSubjectList.add(new Subject("Label1", 80));
+            chartSubjectList.add(new Subject("Label2", 70));
+            chartSubjectList.add(new Subject("Label3", 50));
+            chartSubjectList.add(new Subject("Label4", 40));
+            chartSubjectList.add(new Subject("Label5", 60));
+            JRBeanCollectionDataSource chartDataSource = new JRBeanCollectionDataSource(chartSubjectList);
+
+            // chartDataSource
+            List<Subject> barChartSubjectList = new ArrayList<Subject>();
+            barChartSubjectList.add(new Subject("Label6", 80));
+            barChartSubjectList.add(new Subject("Label7", 70));
+            barChartSubjectList.add(new Subject("Label8", 50));
+            barChartSubjectList.add(new Subject("Label9", 40));
+            barChartSubjectList.add(new Subject("Label10", 60));
+            JRBeanCollectionDataSource barChartDataSource = new JRBeanCollectionDataSource(barChartSubjectList);
 
             Map<String, Object> map = new HashMap<String, Object>();
             map.put("tableData", tableDataSource);
             map.put("chartDataSource", chartDataSource);
+            map.put("barChartDataSource", barChartDataSource);
 
             List<Map<String, ?>> mapList = new ArrayList<Map<String, ?>>();
             mapList.add(map);
@@ -135,15 +168,63 @@ public class FirstReport {
         System.out.print("Compiling Report... ");
         JasperReport jasperReport = JasperCompileManager.compileReport(TEMPLATES_LOCATION + reportName + "." + jrxmlExtension);
         System.out.println("DONE");
+
+        // Execute Runtime modifications in templates
         runtimeModifications(reportName, jasperReport);
+
         System.out.print("Filling Report... ");
         JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, dataSource);
         System.out.println("DONE");
-        String fileName = getFileName(reportName, pdfExtension);
-        System.out.print("Exporting Report... ");
-        JasperExportManager.exportReportToPdfFile(jasperPrint,REPORTS_LOCATION + fileName);
+
+        exportReportTo(reportName, pdfExtension, jasperPrint);
+        exportReportTo(reportName, htmlExtension, jasperPrint);
+        exportReportTo(reportName, xlsExtension, jasperPrint);
+        exportReportTo(reportName, xlsxExtension, jasperPrint);
+        exportReportTo(reportName, rtfExtension, jasperPrint);
+        exportReportTo(reportName, pptxExtension, jasperPrint);
+        exportReportTo(reportName, csvExtension, jasperPrint);
+
+    }
+
+    private static void exportReportTo(String reportName, String type, JasperPrint jasperPrint) throws Exception {
+        String fileName = getFileName(reportName, type);
+        System.out.print(String.format("Exporting Report to %s...", type.toUpperCase()));
+	    if (type.equals("html")) {
+            JasperExportManager.exportReportToHtmlFile(jasperPrint, REPORTS_LOCATION + fileName);
+        } else if (type.equals("xlsx")) {
+            JRXlsxExporter xlsxExporter = new JRXlsxExporter();
+            xlsxExporter.setExporterInput(new SimpleExporterInput(jasperPrint));
+            xlsxExporter.setExporterOutput(new SimpleOutputStreamExporterOutput(new FileOutputStream(new File(REPORTS_LOCATION + fileName))));
+            xlsxExporter.exportReport();
+        } else if (type.equals("xls")) {
+            JRXlsExporter xlsExporter = new JRXlsExporter();
+            xlsExporter.setExporterInput(new SimpleExporterInput(jasperPrint));
+            xlsExporter.setExporterOutput(new SimpleOutputStreamExporterOutput(new FileOutputStream(new File(REPORTS_LOCATION + fileName))));
+            xlsExporter.exportReport();
+        } else if (type.equals("rtf")) {
+            JRRtfExporter jrRtfExporter = new JRRtfExporter();
+            jrRtfExporter.setExporterInput(new SimpleExporterInput(jasperPrint));
+            jrRtfExporter.setExporterOutput(new SimpleWriterExporterOutput(new FileOutputStream(new File(REPORTS_LOCATION + fileName))));
+            jrRtfExporter.exportReport();
+        } else if (type.equals("pptx")) {
+            JRPptxExporter jrPptxExporter = new JRPptxExporter();
+            jrPptxExporter.setExporterInput(new SimpleExporterInput(jasperPrint));
+            jrPptxExporter.setExporterOutput(new SimpleOutputStreamExporterOutput(new FileOutputStream(new File(REPORTS_LOCATION + fileName))));
+            jrPptxExporter.exportReport();
+        } else if (type.equals("csv")) {
+            JRCsvExporter jrCsvExporter = new JRCsvExporter();
+            jrCsvExporter.setExporterInput(new SimpleExporterInput(jasperPrint));
+            jrCsvExporter.setExporterOutput(new SimpleWriterExporterOutput(new FileOutputStream(new File(REPORTS_LOCATION + fileName))));
+            jrCsvExporter.exportReport();
+        } else {
+	        JasperExportManager.exportReportToPdfFile(jasperPrint,REPORTS_LOCATION + fileName);
+        }
         System.out.println("DONE");
         System.out.println("Report successfully exported to: " + REPORTS_LOCATION + fileName);
+
+//        switch (type){
+//
+//        }
     }
 
     private static void runtimeModifications(String reportName, JasperReport jasperReport){
