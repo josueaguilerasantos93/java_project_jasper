@@ -71,7 +71,7 @@
 					<textFieldExpression><![CDATA[$P{studentName}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement key="studentAge" x="430" y="30" width="95" height="21" forecolor="#FFFFFF" uuid="6bb2451d-c441-418f-8830-19eac8944d7c">
+					<reportElement key="studentAge" x="430" y="30" width="161" height="21" forecolor="#FFFFFF" uuid="6bb2451d-c441-418f-8830-19eac8944d7c">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
@@ -80,7 +80,7 @@
 					<textFieldExpression><![CDATA[$P{studentAge}]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="ScaleFont" pattern="MMM dd, YYYY" isBlankWhenNull="true">
-					<reportElement key="studentBirthDate" x="430" y="50" width="94" height="21" forecolor="#FFFFFF" uuid="6806468f-99c4-481a-9363-d8039e3e6c52"/>
+					<reportElement key="studentBirthDate" x="430" y="50" width="161" height="21" forecolor="#FFFFFF" uuid="6806468f-99c4-481a-9363-d8039e3e6c52"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
 						<font fontName="Arial" size="15" isBold="false"/>
 					</textElement>

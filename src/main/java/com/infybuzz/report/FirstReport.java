@@ -1,5 +1,6 @@
 package com.infybuzz.report;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.json.JsonMapper;
 import net.sf.jasperreports.engine.*;
@@ -21,6 +22,7 @@ import net.sf.jasperreports.export.SimpleWriterExporterOutput;
 import java.awt.*;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.List;
@@ -108,6 +110,35 @@ public class FirstReport {
         }
     }
 
+
+    private static JasperReport getFirstReportJasperReportTemplate() throws JRException {
+        return JasperCompileManager.compileReport(TEMPLATES_LOCATION + firstReportName + "." + jrxmlExtension);
+    }
+
+
+    private static JRBeanCollectionDataSource getFirstReportJRBeanCollectionDataSource() throws JsonProcessingException {
+        // build fields
+        Student student1 = new Student(1, "Josue", "Aguilera Santos", "Patrocinio", "La Habana");
+        Student student2 = new Student(2, "Maria", "Gimenez", "Jose Marti", "La Habana");
+        Student student3 = new Student(3, "Juan", "Gonzalez", "Alameda", "La Habana");
+        Student student4 = new Student(4, "Marcos", "De la Rosa", "Camilo Cienfuegos", "La Habana");
+        List<Student> studentList = new ArrayList<Student>();
+        studentList.add(student1);
+        studentList.add(student2);
+        studentList.add(student3);
+        studentList.add(student4);
+        JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(studentList);
+	    return dataSource;
+    }
+
+    private static Map<String, Object> getFirstReportParameters() throws ParseException {
+        Map<String, Object> parameters = new HashMap<String, Object>();
+        parameters.put("studentName", "Pepe Aguilera Santos");
+        parameters.put("studentAge", 28);
+        parameters.put("studentBirthDate", fullDateFormatter.parse("1993-09-26"));
+        return parameters;
+    }
+
     private static void generateStudentReport() {
         String reportName = studentReportName;
         try {
@@ -116,6 +147,11 @@ public class FirstReport {
             // build parameters
             Map<String, Object> parameters = new HashMap<String, Object>();
             parameters.put("studentName", "Josue Aguilera Santos");
+
+            // SubReport Fisrt Report
+            parameters.put("subReport", getFirstReportJasperReportTemplate());
+            parameters.put("subReportDataSource", getFirstReportJRBeanCollectionDataSource());
+            parameters.put("subReportParameters", getFirstReportParameters());
 
             // build fields
             List<Subject> subjectList = new ArrayList<Subject>();
@@ -156,6 +192,8 @@ public class FirstReport {
             System.out.print("Creating DataSource... ");
             JRMapCollectionDataSource dataSource = new JRMapCollectionDataSource(mapList);
             System.out.println("DONE");
+
+
 
             generateReport(reportName, parameters, dataSource);
         } catch(Exception e) {

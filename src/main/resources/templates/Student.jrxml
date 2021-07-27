@@ -54,6 +54,9 @@
 	<parameter name="studentName" class="java.lang.String">
 		<defaultValueExpression><![CDATA["Josue"]]></defaultValueExpression>
 	</parameter>
+	<parameter name="subReport" class="net.sf.jasperreports.engine.JasperReport"/>
+	<parameter name="subReportDataSource" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<parameter name="subReportParameters" class="java.util.Map"/>
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
@@ -205,68 +208,10 @@
 		</band>
 	</detail>
 	<pageFooter>
-		<band height="230">
+		<band height="28">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<frame>
-				<reportElement x="0" y="7" width="555" height="200" uuid="3b42e8f6-5a8a-4fb0-b519-cc56d5d44fbf">
-					<property name="com.jaspersoft.studio.unit.y" value="px"/>
-				</reportElement>
-				<pie3DChart>
-					<chart evaluationTime="Report">
-						<reportElement x="0" y="0" width="170" height="140" uuid="fa2342b2-de9f-41e6-8651-1c4d83cd94ad"/>
-						<chartTitle/>
-						<chartSubtitle/>
-						<chartLegend/>
-					</chart>
-					<pieDataset>
-						<dataset resetType="Report">
-							<datasetRun subDataset="chartDataset" uuid="0612fb8f-a17b-4fca-bb77-8e05dab83e29">
-								<dataSourceExpression><![CDATA[$F{chartDataSource}]]></dataSourceExpression>
-							</datasetRun>
-						</dataset>
-						<keyExpression><![CDATA[$F{subjectName}]]></keyExpression>
-						<valueExpression><![CDATA[$F{marksObtained}]]></valueExpression>
-						<labelExpression><![CDATA["" + $F{marksObtained}]]></labelExpression>
-					</pieDataset>
-					<pie3DPlot>
-						<plot/>
-						<itemLabel/>
-					</pie3DPlot>
-				</pie3DChart>
-				<bar3DChart>
-					<chart evaluationTime="Report">
-						<reportElement x="235" y="0" width="320" height="200" uuid="ec043f6c-1e91-47ec-9a4b-917e829a94fa"/>
-						<chartTitle/>
-						<chartSubtitle/>
-						<chartLegend/>
-					</chart>
-					<categoryDataset>
-						<dataset resetType="Report">
-							<datasetRun subDataset="tableDataset" uuid="2da98876-f39e-481b-9c79-0c5b4928bd18">
-								<dataSourceExpression><![CDATA[$F{barChartDataSource}]]></dataSourceExpression>
-							</datasetRun>
-						</dataset>
-						<categorySeries>
-							<seriesExpression><![CDATA[$F{subjectName}]]></seriesExpression>
-							<categoryExpression><![CDATA[$F{subjectName} + "=" +$F{marksObtained}]]></categoryExpression>
-							<valueExpression><![CDATA[$F{marksObtained}]]></valueExpression>
-							<labelExpression><![CDATA[$F{subjectName}]]></labelExpression>
-						</categorySeries>
-					</categoryDataset>
-					<bar3DPlot>
-						<plot/>
-						<itemLabel/>
-						<categoryAxisFormat>
-							<axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
-						</categoryAxisFormat>
-						<valueAxisFormat>
-							<axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
-						</valueAxisFormat>
-					</bar3DPlot>
-				</bar3DChart>
-			</frame>
-			<frame>
-				<reportElement mode="Opaque" x="0" y="215" width="555" height="15" backcolor="#9196B8" uuid="4e3785c9-dc2c-4fc5-9dee-161582b08a7d">
+				<reportElement mode="Opaque" x="0" y="10" width="555" height="15" backcolor="#9196B8" uuid="4e3785c9-dc2c-4fc5-9dee-161582b08a7d">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
@@ -292,4 +237,72 @@
 			</frame>
 		</band>
 	</pageFooter>
+	<summary>
+		<band height="424">
+			<frame>
+				<reportElement x="0" y="7" width="555" height="200" uuid="5b6c3046-bed5-43ea-8b60-9924fe397e56">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<pie3DChart>
+					<chart evaluationTime="Report">
+						<reportElement x="0" y="0" width="170" height="140" uuid="df7d582d-355b-4be4-a18b-f3c7afbb338c"/>
+						<chartTitle/>
+						<chartSubtitle/>
+						<chartLegend/>
+					</chart>
+					<pieDataset>
+						<dataset resetType="Report">
+							<datasetRun subDataset="chartDataset" uuid="603f82d2-fe04-463c-8b64-a8750636512a">
+								<dataSourceExpression><![CDATA[$F{chartDataSource}]]></dataSourceExpression>
+							</datasetRun>
+						</dataset>
+						<keyExpression><![CDATA[$F{subjectName}]]></keyExpression>
+						<valueExpression><![CDATA[$F{marksObtained}]]></valueExpression>
+						<labelExpression><![CDATA["" + $F{marksObtained}]]></labelExpression>
+					</pieDataset>
+					<pie3DPlot>
+						<plot/>
+						<itemLabel/>
+					</pie3DPlot>
+				</pie3DChart>
+				<bar3DChart>
+					<chart evaluationTime="Report">
+						<reportElement x="235" y="0" width="320" height="200" uuid="5ab1d7ce-115a-411f-88da-dc68f881da9a"/>
+						<chartTitle/>
+						<chartSubtitle/>
+						<chartLegend/>
+					</chart>
+					<categoryDataset>
+						<dataset resetType="Report">
+							<datasetRun subDataset="tableDataset" uuid="92d3b972-7892-4989-9891-0f751d609eae">
+								<dataSourceExpression><![CDATA[$F{barChartDataSource}]]></dataSourceExpression>
+							</datasetRun>
+						</dataset>
+						<categorySeries>
+							<seriesExpression><![CDATA[$F{subjectName}]]></seriesExpression>
+							<categoryExpression><![CDATA[$F{subjectName} + "=" +$F{marksObtained}]]></categoryExpression>
+							<valueExpression><![CDATA[$F{marksObtained}]]></valueExpression>
+							<labelExpression><![CDATA[$F{subjectName}]]></labelExpression>
+						</categorySeries>
+					</categoryDataset>
+					<bar3DPlot>
+						<plot/>
+						<itemLabel/>
+						<categoryAxisFormat>
+							<axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
+						</categoryAxisFormat>
+						<valueAxisFormat>
+							<axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
+						</valueAxisFormat>
+					</bar3DPlot>
+				</bar3DChart>
+			</frame>
+			<subreport overflowType="Stretch">
+				<reportElement x="0" y="220" width="555" height="200" uuid="4e778b0f-c903-47ec-a6a5-41fc0d5d5949"/>
+				<parametersMapExpression><![CDATA[$P{subReportParameters}]]></parametersMapExpression>
+				<dataSourceExpression><![CDATA[$P{subReportDataSource}]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{subReport}]]></subreportExpression>
+			</subreport>
+		</band>
+	</summary>
 </jasperReport>
